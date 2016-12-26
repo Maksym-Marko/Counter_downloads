@@ -11,7 +11,7 @@ class UpdateJSON{
 $createJSONdata = new UpdateJSON;
 
 $JSONfile = 'dataDownloads.json';
-$JSONdata = $_POST['JSONobj'];
+$JSONdata = stripslashes( $_POST['JSONobj'] );
 
 if( !empty( $JSONdata ) ){
 	$createJSONdata->OpenJSONfile( $JSONfile, $JSONdata );
